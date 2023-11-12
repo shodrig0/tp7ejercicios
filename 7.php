@@ -1,18 +1,15 @@
 <?php
 
-//Implemente un programa principal que utilice las funciones anteriores, cargando, mostrando y buscando lamascota menor a una edad ingresada por un usuario.
-
 //funciones de los incisos anteriores
 function cargarMascotas()
 {
-    $mascota1 = ["nombre" => "Gonzo", "edad" => 9, "tipo" => "perro"];
-    $mascota2 = ["nombre" => "Peggy", "edad" => 3, "tipo" => "puerco"];
-    $mascota3 = ["nombre" => "Harry", "edad" => 4, "tipo" => "hamster"];
-
-    $misMascotas[0] = $mascota1;
-    $misMascotas[1] = $mascota2;
-    $misMascotas[2] = $mascota3;
-
+    $misMascotas = [];
+    echo "Nombre: ";
+    $misMascotas["nombre"] = trim(fgets(STDIN));
+    echo "Edad: ";
+    $misMascotas["edad"] = trim(fgets(STDIN));
+    echo "Tipo: ";
+    $misMascotas["tipo"] = trim(fgets(STDIN));
     return $misMascotas;
 }
 
@@ -39,14 +36,18 @@ function buscarPrimerMenorA($misMascotas, $edad)
     return $edadCondicion;
 }
 
-$mascota1 = ["nombre" => "Gonzo", "edad" => 9, "tipo" => "perro"];
-$mascota2 = ["nombre" => "Peggy", "edad" => 3, "tipo" => "puerco"];
-$mascota3 = ["nombre" => "Harry", "edad" => 4, "tipo" => "hamster"];
-$mascota4 = ["nombre" => "Bobby", "edad" => 10, "tipo" => "gato"];
-
-$misMascotas[0] = $mascota1;
-$misMascotas[1] = $mascota2;
-$misMascotas[2] = $mascota3;
-$misMascotas[3] = $mascota4;
+//Implemente un programa principal que utilice las funciones anteriores, cargando, mostrando y buscando la mascota menor a una edad ingresada por un usuario.
 
 //Prog Ppal
+
+echo "Cuántas mascotas desea ingresar?: ";
+$cantMascotas = trim(fgets(STDIN));
+$listadoMascotas = $cantMascotas;
+$listadoMascotas = cargarMascotas();
+
+if (count($listadoMascotas) > 0) {
+    $listaDeMascotas = leerMascotas($listadoMascotas);
+    echo $listaDeMascotas;
+}
+
+// TERMINAR
