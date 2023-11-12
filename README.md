@@ -1,3 +1,3 @@
 # tp7ejercicios-repository
- 
-aa
+
+## preguntar por las sintaxis
