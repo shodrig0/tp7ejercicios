@@ -5,7 +5,7 @@ function buscarPrimerMenorA($misMascotas, $edad)
 {
     $n = count($misMascotas);
     $i = 0;
-    while ($i < $n && $misMascotas[$i]["edad"] >= $edad) {
+    while ($i < $n && $misMascotas[$i]["edad"] > $edad) {
         $i++; //para seguir evaluando la condicion
     }
     if ($i < $n) {
